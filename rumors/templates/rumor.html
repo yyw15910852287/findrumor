@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>新冠肺炎疫情防控辟谣专区</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="egde" />
+    <meta name="renderer" content="webkit" />
+    <link rel="stylesheet" href="css/common.css"  />
+    <link rel="stylesheet" href="css/main.css"  />
+</head>
+<!-- <body> -->
+
+<body class="sub-txt">
+    <div class="banner"> <img src="./images/bannerPc.jpg" width="100%" class="domMobile">
+        <div class="search">
+            <form action="/rumor/rumortitle/" method="get" accept-charset="utf-8">
+                <input type="text" class="inputTxt" placeholder="请输入想要查找的内容" name="rumortitle">
+                <button class="inputSub" type = "submit ">查找</button>
+            </form>
+            <form action="/rumor/news/" method="get">
+                <input type="text" class="inputTxt" placeholder="请输入想要检测的内容" name="news" />
+                <button class="inputSub" type = "submit ">检测</button>
+    </form>
+        </div>
+    </div>
+
+<!--    <h3>搜索谣言内容：</h3>
+    <form action="/rumor/rumortitle/" method="get">
+        谣言内容搜索 <input type="text" name="rumortitle" />
+        <button type = "submit ">提交</button>
+    </form>
+    -->
+
+ <!--   <form action="/rumor/news/" method="get">
+    <h3>判断消息内容真实性：</h3>
+        内容搜索: <input type="text" name="news" />
+        <button type = "submit ">检测</button>
+    </form>
+    -->
+
+
+
+    <p>{{ result.title }}</p>
+
+
+     <div class="main">
+        <div class="partList">
+            <div class="listArea">
+                <ul class="list">
+                     {% for line in data %}
+                         <li class="tag1"><a href="/rumor/a/?param={{ line.title }}" target="_blank">{{ line.title }}</a></li>
+                         {{ line.state }}<br>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+     </div>
+
+
+
+   <!--         {% for line in data %}
+                <a href="/rumor/a/?param={{ line.title }}" target="_blank">{{ line.title }}</a>
+                <a href="a/", onclick="ajax()", id="test">{{ line.title }}</a>
+                {{ line.state }}<br>
+            {% endfor %}
+    -->
+</body>
+
+
+
+<!--
+
+<script>
+
+function ajax(){
+	var value = document.getElementById("test").innerText;//根据id获取a标签的文本值，"test"为a标签的id名称，根据需要修改
+    var ajaxData = {
+        type:"GET",//传输方式，GET或POST
+        url: "/rumor/a/",//后端路径，需要修改成自己的路径
+        // url: "/rumor/rumortitle/a/",//后端路径，需要修改成自己的路径
+        async:"true",//是否开启异步
+        data:value,//传输的数据，即a标签的文本值
+        dataType:"text",//传输的数据类型
+        contentType:"application/x-www-form-urlencoded",//传输数据编码
+        success: function(a){
+        	// alert(a)
+            alert("success")
+        },
+        error:function(){
+        	alert("fail")
+        }
+    }
+    var xhr = createxmlHttpRequest();
+    xhr.responseType=ajaxData.dataType;
+    var realUrl = ajaxData.url + "?" + "param=" + ajaxData.data;
+    xhr.open(ajaxData.type,realUrl,ajaxData.async);
+    xhr.setRequestHeader("Content-Type",ajaxData.contentType);
+    xhr.send(convertData(ajaxData.data));
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+            if(xhr.status == 200){
+                // ajaxData.success(xhr.response)
+            }else{
+                ajaxData.error()
+            }
+        }
+    }
+}
+
+function createxmlHttpRequest() {
+    if (window.ActiveXObject) {
+        return new ActiveXObject("Microsoft.XMLHTTP");
+    } else if (window.XMLHttpRequest) {
+        return new XMLHttpRequest();
+    }
+}
+
+function convertData(data){
+    if( typeof data === 'object' ){
+        var convertResult = "" ;
+        for(var c in data){
+            convertResult+= c + "=" + data[c] + "&";
+        }
+        convertResult=convertResult.substring(0,convertResult.length-1)
+        return convertResult;
+    }else{
+        return data;
+    }
+}
+</script>
+-->
+</html>

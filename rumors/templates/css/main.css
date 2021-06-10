@@ -1,0 +1,385 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+.hide {
+    display: none;
+}
+
+.domMobile {
+    display: none;
+}
+
+.banner {
+    height: 300px;
+    background: url(../images/bannerPc.jpg) 50% 0 no-repeat;
+}
+
+.search {
+    position: absolute;
+    left: 50%;
+    top: 215px;
+    width: 730px;
+    height: 75px;
+    margin-left: -310px;
+}
+
+.search .inputTxt {
+    float: left;
+    width: 515px;
+    height: 60px;
+    font-size: 28px;
+    color: #333;
+    border: none;
+    background: #fff url(http://www.piyao.org.cn/2020yqpy/images/bgInput.png) 15px 50% no-repeat;
+    text-indent: 70px;
+    border-radius: 15px 0 0 15px;
+}
+
+.search .inputSub {
+    float: left;
+    width: 115px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    border: none;
+    background: #0052bd;
+    border-radius: 0 15px 15px 0;
+    cursor: pointer;
+}
+
+.main {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.main .linkArea {
+    padding: 30px;
+    text-align: center;
+}
+
+.main .linkArea img {
+    margin: 0 30px;
+}
+
+.main .list li {
+    position: relative;
+    font-size: 24px;
+    line-height: 1.8em;
+    color: #333;
+    background: #efeeee;
+    border-radius: 15px;
+    padding: 30px 145px 30px 60px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.main .list li:before {
+    content: '';
+    font-size: 0;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -25px;
+    z-index: 10;
+    width: 138px;
+    height: 136px;
+}
+
+.main .list li.tag1:before {
+    background: url(../images/tag1.png) no-repeat;
+}
+
+.main .list li.tag2:before {
+    background: url(../images/tag2.png) no-repeat;
+}
+
+.main .list li.tag3:before {
+    background: url(../images/tag3.png) no-repeat;
+}
+
+.main .list li.tag4:before {
+    background: url(../images/tag4.png) no-repeat;
+}
+
+.more {
+    width: 100px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #bbb;
+    background: #eee;
+    line-height: 2em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+
+/*search*/
+
+.search_num,
+.search_list,
+.fenye {}
+
+.search_num {
+    margin: 30px 0 30px 10px;
+}
+
+.search_num span {
+    font-size: 18px;
+    height: 50px;
+    color: #fff;
+    padding: 0 15px;
+    display: inline-block;
+    line-height: 50px;
+    background: #0052bd;
+    border-radius: 10px;
+}
+
+.previous {
+    float: left;
+    font-size: 14px;
+    color: #585858;
+    border: 1px solid #c7c7c7;
+    border-radius: 5px;
+    padding: 5px 12px 5px 12px;
+    cursor: pointer;
+}
+
+.next {
+    float: left;
+    font-size: 14px;
+    color: #585858;
+    border: 1px solid #c7c7c7;
+    border-radius: 5px;
+    padding: 5px 12px 5px 12px;
+    cursor: pointer;
+}
+
+.fenye {
+    width: auto;
+    margin: 0 auto;
+    display: table;
+    overflow: hidden;
+    margin-top: 50px;
+    display: none;
+}
+
+.fy_num {
+    float: left;
+    list-style: none;
+}
+
+.fy_num li {
+    float: left;
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+    line-height: 28px;
+    cursor: pointer;
+    margin: 0 10px 0 10px;
+}
+
+.fy_num li.on {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    color: #fff;
+    background: #0052bd;
+    text-align: center;
+    line-height: 28px;
+    cursor: pointer;
+}
+
+.previous {
+    margin-right: 4px;
+}
+
+.next {
+    margin-left: 4px;
+}
+
+.backHome {
+    display: none;
+    position: fixed;
+    width: 110px;
+    height: 45px;
+    line-height: 45px;
+    right: 20px;
+    bottom: 20px;
+    background: #0052bd;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 15px;
+    cursor: pointer;
+    z-index: 100;
+    animation-name: jello0;
+    transform-origin: center;
+    animation-duration: 2.6s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+
+@keyframes jello0 {
+    0% {
+        transform: scale3d(0.9, 0.9, 1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale3d(0.9, 0.9, 1);
+        opacity: 0.8;
+    }
+}
+
+.tagTxt {
+    font-size: 20px;
+}
+
+.tagTxt a {
+    color: #0052bd;
+    background: url(../images/icon1.png) 0 50% no-repeat;
+    padding-left: 20px;
+    background-size: 20px 20px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 767px) {
+    .domPC {
+        display: none;
+    }
+    .domMobile {
+        display: block;
+    }
+    .banner {
+        height: auto;
+        background: none;
+    }
+    .search {
+        position: absolute;
+        left: 10%;
+        top: 85px;
+        width: 80%;
+        height: 40px;
+        margin-left: 0;
+    }
+    .search .inputTxt {
+        display: inline-block;
+        width: 75%;
+        height: 40px;
+        font-size: 16px;
+        padding: 0;
+        border: none;
+        background-size: 25px 25px;
+        text-indent: 45px;
+        border-radius: 15px 0 0 15px;
+    }
+    .search .inputSub {
+        display: inline-block;
+        width: 25%;
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
+        color: #fff;
+        border: none;
+        background: #0052bd;
+        border-radius: 0 15px 15px 0;
+        cursor: pointer;
+    }
+    .main {
+        width: 100%;
+    }
+    .main .linkArea {
+        padding: 30px 0;
+        text-align: center;
+    }
+    .main .linkArea img {
+        width: 30%;
+        margin: 0;
+    }
+    .main .listArea {
+        background: #eaeaea;
+        padding: 20px 10px;
+    }
+    .main .list li {
+        position: relative;
+        font-size: 18px;
+        line-height: 1.8em;
+        color: #333;
+        min-height: 50px;
+        background: #fff;
+        border-radius: 15px;
+        padding: 15px 100px 15px 15px;
+        margin-bottom: 25px;
+    }
+    .main .list li:before {
+        right: -10px;
+        top: -10px;
+        width: 100px;
+        height: 99px;
+    }
+    .main .list li.tag1:before {
+        background: url(../images/tag1.png) no-repeat;
+        background-size: 100px 99px;
+    }
+    .main .list li.tag2:before {
+        background: url(../images/tag2.png) no-repeat;
+        background-size: 100px 99px;
+    }
+    .main .list li.tag3:before {
+        background: url(../images/tag3.png) no-repeat;
+        background-size: 100px 99px;
+    }
+    .main .list li.tag4:before {
+        background: url(../images/tag4.png) no-repeat;
+        background-size: 100px 99px;
+    }
+    .search_list {
+        background: #eaeaea;
+        padding: 20px 10px;
+    }
+    .backHome {
+        display: none;
+        position: fixed;
+        width: 110px;
+        height: 45px;
+        line-height: 45px;
+        right: 10px;
+        bottom: 10px;
+        background: #0052bd;
+        color: #fff;
+        font-size: 20px;
+        text-align: center;
+        border-radius: 15px;
+        animation-name: jello0;
+        transform-origin: center;
+        animation-duration: 2.6s;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+    }
+    @keyframes jello0 {
+        0% {
+            transform: scale3d(0.9, 0.9, 1);
+            opacity: 0.8;
+        }
+        50% {
+            transform: scale3d(1, 1, 1);
+            opacity: 1;
+        }
+        100% {
+            transform: scale3d(0.9, 0.9, 1);
+            opacity: 0.8;
+        }
+    }
+}

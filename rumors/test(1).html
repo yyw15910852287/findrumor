@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a href="javascript:void(0);", onclick="ajax()", id="test">W3School</a>
+
+</body>
+<script>
+
+function ajax(){
+	var value = document.getElementById("test").innerText;//根据id获取a标签的文本值，"test"为a标签的id名称，根据需要修改
+    var ajaxData = {
+        type:"GET",//传输方式，GET或POST
+        url: "/rumor/rumortitle/a/",//后端路径，需要修改成自己的路径
+        async:"true",//是否开启异步
+        data:value,//传输的数据，即a标签的文本值
+        dataType:"text",//传输的数据类型 
+        contentType:"application/x-www-form-urlencoded",//传输数据编码
+        success: function(){
+        	alert("success")
+        },
+        error:function(){
+        	alert("fail")
+        }
+    }
+    var xhr = createxmlHttpRequest();
+    xhr.responseType=ajaxData.dataType;
+    var realUrl = ajaxData.url + "?" + "param=" + ajaxData.data;
+    xhr.open(ajaxData.type,realUrl,ajaxData.async);
+    xhr.setRequestHeader("Content-Type",ajaxData.contentType);
+    xhr.send(convertData(ajaxData.data));
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+            if(xhr.status == 200){
+                ajaxData.success(xhr.response)
+            }else{
+                ajaxData.error()
+            }
+        }
+    }
+}
+
+function createxmlHttpRequest() {
+    if (window.ActiveXObject) {
+        return new ActiveXObject("Microsoft.XMLHTTP");
+    } else if (window.XMLHttpRequest) {
+        return new XMLHttpRequest();
+    }
+}
+
+function convertData(data){
+    if( typeof data === 'object' ){
+        var convertResult = "" ;
+        for(var c in data){
+            convertResult+= c + "=" + data[c] + "&";
+        }
+        convertResult=convertResult.substring(0,convertResult.length-1)
+        return convertResult;
+    }else{
+        return data;
+    }
+}
+</script>
+</html>
